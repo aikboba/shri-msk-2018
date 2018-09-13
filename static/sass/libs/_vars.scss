@@ -1,0 +1,67 @@
+// Screen resolution.
+$sres: (
+    desktop-min:        1024px,
+    pre-desktop-min:    960px,
+    ipad-min:           768px,
+    middle-device:      526px,
+    iphone-min:         320px,
+);
+    
+// Z-indexes.
+$z-index: (
+    bg: 		1,
+    content:	2,
+    popup-over:	90,
+    popup:		99,
+);
+
+// Sizes.
+$size: (
+    figure-padding:     20px,
+    b-radius-big:       20px,
+    b-radius-mid:       14px,
+    sticker-w:          200px,
+    sticker-h:          120px,
+    sticker-sm-h:       100px,
+);
+
+// Font.
+$font: (
+    family:		(Arial, sans-serif),
+);
+// Font size.
+$fsize: (
+    h1:         1.688rem,
+    h2:         1.125rem,
+    big:        2.25rem,
+    giant:      4.125rem,
+    menu:       1rem,
+    p:          0.875rem,
+    tiny-plus:  0.813rem,
+    tiny:       0.75rem,
+);
+
+// Palette.
+$palette: (
+    bg:                     #ffffff,
+    black:                  #000,
+    text:                   #333333,
+    light:                  #F7F7F7,
+    light-grey:             #858585,
+    yellow:                 #FFD93E,
+
+    label-shadow-active:    rgba(197,186,186,0.5),
+
+    popup-overlay:          rgba(51,51,51,0.5),
+);
+
+$r2x: "
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx)
+";
+
+$hover: "&:hover, &:active, &:focus";

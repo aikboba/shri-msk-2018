@@ -1,0 +1,156 @@
+textarea { resize: none; }
+button
+{
+    border: none;
+    cursor: pointer;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+button
+{
+    color: _palette(text);
+}
+
+//Range Input
+@mixin track-color()
+{
+    background: #068fff;
+    background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
+    background: -webkit-linear-gradient(left, #068fff 0%,#ffd800 50%,#f76b1c 100%);
+    background: linear-gradient(to right, #068fff 0%,#ffd800 50%,#f76b1c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
+}
+@mixin track-color-light()
+{
+    background: #ffe682;
+    background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
+    background: -webkit-linear-gradient(left, #ffe682 0%,#ff9e00 100%);
+    background: linear-gradient(to right, #ffe682 0%,#ff9e00 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
+}
+$thumb-color: #FFC000;
+$thumb-radius: 60px;
+$thumb-height: 60px;
+$thumb-width: 60px;
+$thumb-border-width: 2px;
+$thumb-border-color: #EEBA00;
+$thumb-outer-width: 4px;
+$thumb-outer-color: _palette(bg);
+
+$track-width: 100%;
+$track-height: 60px;
+$track-radius: 60px;
+
+@mixin track() {
+    width: $track-width;
+    height: $track-height;
+    cursor: pointer;
+    animate: 0.2s;
+}
+@mixin thumb() {
+    position: relative;
+    z-index: _z-index(content);
+    border: $thumb-border-width solid $thumb-border-color;
+    height: $thumb-height;
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+    background: $thumb-color;
+    box-shadow: 0 0 0 $thumb-outer-width $thumb-outer-color;
+    cursor: pointer;
+}
+
+input[type=range].popup-range {
+    -webkit-appearance: none;
+    width: $track-width;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+        @include track();
+        @include border-radius($track-radius);
+    }
+    &::-webkit-slider-thumb {
+        @include thumb();
+        -webkit-appearance: none;
+    }
+    &:focus::-webkit-slider-runnable-track {
+        @include track-color();
+    }
+
+    &::-moz-range-track {
+        @include track();
+        @include border-radius($track-radius);
+    }
+    &::-moz-range-thumb { @include thumb(); }
+
+    &::-ms-track {
+        @include track();
+        background: transparent;
+        color: transparent;
+    }
+    &::-ms-fill-lower { @include border-radius($track-radius); }
+    &::-ms-fill-upper { @include border-radius($track-radius); }
+    &::-ms-thumb { @include thumb(); }
+
+    &.temper-range
+    {
+        &::-webkit-slider-runnable-track { @include track-color(); }
+        &::-moz-range-track { @include track-color(); }
+        &::-ms-fill-lower { @include track-color(); }
+        &::-ms-fill-upper { @include track-color(); }
+        &:focus::-ms-fill-lower { @include track-color(); }
+        &:focus::-ms-fill-upper { @include track-color(); }
+    }
+    &.light-range
+    {
+        &::-webkit-slider-runnable-track { @include track-color-light(); }
+        &::-moz-range-track { @include track-color-light(); }
+        &::-ms-fill-lower { @include track-color-light(); }
+        &::-ms-fill-upper { @include track-color-light(); }
+        &:focus::-ms-fill-lower { @include track-color-light(); }
+        &:focus::-ms-fill-upper { @include track-color-light(); }
+    }
+}
+//Range Input END
+
+//Reostat
+.reostat-container
+{
+    position: relative;
+    background-image: url(../graph/reostat-circle.png);
+    width: 221px;
+    height: 221px;
+    padding: 22px;
+
+    .reostat-indicator
+    {
+        @include border-radius(10px);
+        position: absolute;
+        background: _palette(text);
+        width: 10px;
+        height: 10px;
+        visibility: hidden;
+    }
+    .reostat-inner
+    {
+        @include vendor('display', 'flex');
+        @include vendor('align-items', 'center');
+        @include vendor('justify-content', 'center');
+        @include border-radius(200px);
+        @include box-shadow(0 2px 4px 0 rgba(134,121,71,0.45));
+        width: 100%;
+        height: 100%;
+        background: #FEFEFE;
+
+        .current-val
+        {
+            font-size: _fsize(giant);
+            font-weight: bold;
+        }
+    }
+}
+//Reostat END

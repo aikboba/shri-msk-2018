@@ -1,0 +1,22 @@
+header
+{
+    grid-area: header;
+    @include vendor('display', 'flex');
+    @include vendor('align-items', 'center');
+
+    #logoLnk { margin-right: 52px; }
+
+    nav
+    {
+        .menu-item
+        {
+            @include opacity(0.6);
+            @include transition(all 0.3s);
+            margin-left: 28px;
+            font-size: _fsize(menu);
+
+            &:first-child { margin-left: 0; }
+            &.current-item, #{$hover} { @include opacity(1); }
+        }
+    }
+}

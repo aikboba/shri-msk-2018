@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Яндекс Дом</title>
+    <link rel="stylesheet" href="static/css/main.css" />
+</head>
+<body>
+    <header>
+        <a href="#" id="logoLnk">
+            <img src="static/graph/logo.svg" onerror="this.src='static/graph/logo@2x.png'" alt="Яндекс Дом" width="108" height="27" />
+        </a>
+        <nav>
+            <a href="#" class="menu-item current-item">Сводка</a>
+            <a href="#" class="menu-item">Устройства</a>
+            <a href="#" class="menu-item">Сценарии</a>
+        </nav>
+    </header>
+    <h2 class="lt-title">Главное</h2>
+    <div id="mainSection">
+        <div class="main-info">
+            <span class="main-name">Привет, Геннадий!</span>
+            <span class="main-text-info">
+                Двери и окна закрыты, сигнализация включена.
+            </span>
+            <ul class="main-temperature">
+                <li class="main-temp-item">
+                    <span class="temp-name">Дома</span>
+                    <span class="temp-value">+23</span>
+                </li>
+                <li class="main-temp-item">
+                    <span class="temp-name">За окном</span>
+                    <span class="temp-value">
+                        +19
+                        <img
+                            src="static/graph/cloud-drizzle.svg"
+                            onerror="this.src='static/graph/cloud-drizzle@2x.png'"
+                            alt="Дождь" width="26" height="26"
+                            class="temp-icon"
+                        />
+                    </span>
+                </li>
+            </ul>
+            <div id="devicesStates">
+                <ul id="devicesStatesList" class="label-list column-style">
+                    <li class="label-item temper-group inactive">
+                        <i class="icon"></i>
+                        <span>Philips Cooler</span>
+                        <span class="note">Начнет охлаждать в 16:30</span>
+                    </li>
+                    <li class="label-item light-group inactive">
+                        <i class="icon"></i>
+                        <span>Xiaomi Yeelight LED Smart Bulb</span>
+                        <span class="note">Включится в 17:00</span>
+                    </li>
+                </ul>
+                <button id="scrollDevicesStates" class="label-list-scroller" data-for="devicesStatesList"></button>
+            </div>
+        </div>
+    </div>
+    <div class="multi-header-wrap space-between rt-title">
+        <h2>Избранные сценарии</h2>
+        <div class="scroll-buttons label-list-scroller" data-for="favScripts">
+            <button class="scroll-btn prev-btn"></button>
+            <button class="scroll-btn next-btn"></button>
+        </div>
+    </div>
+    <div id="favScripts" class="label-list border-box">
+        <button type="button" class="label-item small shadow-hover light-group">
+            <i class="icon"></i>
+            <span>Выключить весь свет в доме и во дворе</span>
+        </button>
+        <button type="button" class="label-item small shadow-hover timer-group">
+            <i class="icon"></i>
+            <span>Я ухожу</span>
+        </button>
+        <button type="button" class="label-item small shadow-hover light-group">
+            <i class="icon"></i>
+            <span>Включить свет<br/>в коридоре</span>
+        </button>
+        <button type="button" class="label-item small shadow-hover temper-group">
+            <i class="icon"></i>
+            <span>Набрать горячую ванну</span>
+            <span class="note">Начнётся в 18:00</span>
+        </button>
+        <button type="button" class="label-item small shadow-hover temper-group">
+            <i class="icon"></i>
+            <span>Сделать пол тёплым во всей квартире</span>
+        </button>
+    </div>
+    <div class="multi-header-wrap space-between lb-title">
+        <div class="multi-header-column">
+            <h2>Избранные устройства</h2>
+            <div class="tabs">
+                <button type="button" class="tab-item current-item">Все</button>
+                <button type="button" class="tab-item">Кухня</button>
+                <button type="button" class="tab-item">Зал</button>
+                <button type="button" class="tab-item">Лампочки</button>
+                <button type="button" class="tab-item">Камеры</button>
+            </div>
+        </div>
+        <div class="scroll-buttons label-list-scroller" data-for="favDevices">
+            <button class="scroll-btn prev-btn"></button>
+            <button class="scroll-btn next-btn"></button>
+        </div>
+    </div>
+    <div id="favDevices" class="label-list one-row">
+        <button
+            type="button" class="label-item shadow-hover light-group"
+            data-for="devicePopup" data-type="lights" data-id="1"
+        >
+            <i class="icon"></i>
+            <span>Xiaomi Yeelight LED Smart Bulb</span>
+            <span class="note">Включено</span>
+        </button>
+        <button
+                type="button" class="label-item inactive shadow-hover temper-group"
+                data-for="devicePopup" data-type="floor" data-id="1"
+        >
+            <i class="icon"></i>
+            <span>D-Link Omna 180 Cam</span>
+            <span class="note">Включится в 17:00</span>
+        </button>
+        <button
+                type="button" class="label-item inactive shadow-hover temper-group"
+                data-for="devicePopup" data-type="temperature" data-id="1"
+        >
+            <i class="icon"></i>
+            <span>Elgato Eve Degree Connected</span>
+            <span class="note">Выключено до 17:00</span>
+        </button>
+        <button
+                type="button" class="label-item inactive shadow-hover light-group"
+                data-for="devicePopup" data-type="lights" data-id="2"
+        >
+            <i class="icon"></i>
+            <span>LIFX Mini Day & Dusk A60 E27</span>
+            <span class="note">Включится в 17:00</span>
+        </button>
+        <button
+                type="button" class="label-item shadow-hover light-group"
+                data-for="devicePopup" data-type="lights" data-id="4"
+        >
+            <i class="icon"></i>
+            <span>Xiaomi Mi Air Purifier 2S</span>
+            <span class="note">Включено</span>
+        </button>
+        <button
+                type="button" class="label-item inactives hadow-hover light-group"
+                data-for="devicePopup" data-type="lights" data-id="3"
+        >
+            <i class="icon"></i>
+            <span>Philips Zhirui</span>
+            <span class="note">Выключено</span>
+        </button>
+    </div>
+    <footer>
+        <nav>
+            <a href="#" class="menu-item">Помощь</a>
+            <a href="#" class="menu-item">Обратная связь</a>
+            <a href="#" class="menu-item">Разработчикам</a>
+            <a href="#" class="menu-item">Условия использования</a>
+        </nav>
+    </footer>
+
+    <!-- Popups -->
+    <!-- Device Popup -->
+    <div id="devicePopup" class="popup-overlay">
+        <form method="post" class="popup-wrapper">
+            <div id="popupContent" class="popup-content"></div>
+            <div class="popup-buttons">
+                <button class="popup-btn">Применить</button>
+                <button class="popup-btn close-popup" type="button">Закрыть</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="static/js/MooTools-Core-1.6.0.js"></script>
+    <script src="static/js/reostat.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

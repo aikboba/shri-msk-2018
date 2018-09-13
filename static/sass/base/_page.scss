@@ -1,0 +1,123 @@
+#mainSection
+{
+    grid-area: left_col;
+
+    .main-info
+    {
+        @include border-radius(_size(b-radius-big));
+        @include vendor('display', 'flex');
+        @include vendor('flex-direction', 'column');
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: _size(figure-padding);
+        padding-right: _size(sticker-w) + _size(figure-padding) * 2;
+        background: url(../graph/bg@1x.png) no-repeat center center;
+        background-size: cover;
+        overflow: hidden;
+
+        @media #{$r2x}
+        {
+            background: url(../graph/bg@2x.png) no-repeat center center;
+        }
+
+        .main-name
+        {
+            font-size: _fsize(h1);
+            font-weight: bold;
+        }
+        .main-text-info
+        {
+            margin-top: 6px;
+            font-size: _fsize(p);
+        }
+        .main-temperature
+        {
+            @include vendor('display', 'flex');
+            @include vendor('flex-wrap', 'wrap');
+            margin-top: 25px;
+
+            .main-temp-item
+            {
+                @include vendor('display', 'flex');
+                @include vendor('flex-direction', 'column');
+                margin-left: 18px;
+
+                &:first-child { margin-left: 0px; }
+
+                .temp-name
+                {
+                    color: _palette(light-grey);
+                    font-size: _fsize(p);
+                }
+                .temp-value
+                {
+                    margin-top: 4px;
+                    font-weight: bold;
+                    font-size: _fsize(big);
+
+                    .temp-icon { margin-left: 5px; }
+                }
+            }
+        }
+        #devicesStates
+        {
+            @include vendor('display', 'flex');
+            @include vendor('flex-direction', 'column');
+            @include vendor('justify-content', 'space-between');
+            position: absolute;
+            right: _size(figure-padding);
+            bottom: 0;
+            height: 100%;
+            padding-top: _size(figure-padding);
+
+            ul
+            {
+                @include vendor('flex', '1');
+                @include vendor('display', 'flex');
+                @include vendor('flex-direction', 'column');
+                overflow: hidden;
+                margin-bottom: 15px;
+            }
+        }
+        #scrollDevicesStates
+        {
+            @include vendor('flex', '0 0 auto');
+            @include vendor('display', 'flex');
+            @include vendor('align-items', 'center');
+            @include vendor('justify-content', 'center');
+            @include border-radius-top-lr(_size(b-radius-big));
+            height: 41px;
+            background-color: _palette(light);
+
+            &:after
+            {
+                @include opacity(0.3);
+                @include transition(all 0.3s);
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-image: url(../graph/arrows-up@2x.png);
+                background-image: url(../graph/arrows-up.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            #{$hover}
+            {
+                &:after { @include opacity(1); }
+            }
+        }
+    }
+}
+#favScripts
+{
+    grid-area: right_col;
+}
+#favDevices
+{
+    grid-area: devices;
+}
+.lt-title { grid-area: lt_title; }
+.rt-title { grid-area: rt_title; }
+.lb-title { grid-area: lb_title; }
