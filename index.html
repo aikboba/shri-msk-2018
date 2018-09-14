@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <title>Яндекс Дом</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="static/css/main.css" />
 </head>
 <body>
     <header>
-        <a href="#" id="logoLnk">
+        <a href="/" id="logoLnk">
             <img src="static/graph/logo.svg" onerror="this.src='static/graph/logo@2x.png'" alt="Яндекс Дом" width="108" height="27" />
         </a>
         <nav>
@@ -53,8 +55,21 @@
                         <span>Xiaomi Yeelight LED Smart Bulb</span>
                         <span class="note">Включится в 17:00</span>
                     </li>
+                    <li class="label-item temper-group inactive">
+                        <i class="icon"></i>
+                        <span>Philips Cooler</span>
+                        <span class="note">Начнет охлаждать в 16:30</span>
+                    </li>
+                    <li class="label-item light-group inactive">
+                        <i class="icon"></i>
+                        <span>Xiaomi Yeelight LED Smart Bulb</span>
+                        <span class="note">Включится в 17:00</span>
+                    </li>
                 </ul>
-                <button id="scrollDevicesStates" class="label-list-scroller" data-for="devicesStatesList"></button>
+                <button
+                    id="scrollDevicesStates" class="label-list-scroller"
+                    data-for="devicesStatesList" data-method="vertical" data-direct="next"
+                ></button>
             </div>
         </div>
     </div>
