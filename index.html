@@ -68,16 +68,16 @@
                 </ul>
                 <button
                     id="scrollDevicesStates" class="label-list-scroller"
-                    data-for="devicesStatesList" data-method="vertical" data-direct="next"
+                    data-for="devicesStatesList" data-method="vertical" data-direct="next" data-type="dual"
                 ></button>
             </div>
         </div>
     </div>
     <div class="multi-header-wrap space-between rt-title">
         <h2>Избранные сценарии</h2>
-        <div class="scroll-buttons label-list-scroller" data-for="favScripts">
-            <button class="scroll-btn prev-btn"></button>
-            <button class="scroll-btn next-btn"></button>
+        <div class="scroll-buttons label-list-scroller">
+            <button class="scroll-btn prev-btn" data-for="favScripts" data-method="page" data-direct="prev"></button>
+            <button class="scroll-btn next-btn" data-for="favScripts" data-method="page" data-direct="next"></button>
         </div>
     </div>
     <div id="favScripts" class="label-list border-box">
@@ -124,9 +124,9 @@
                 <button type="button" class="tab-item">Камеры</button>
             </div>
         </div>
-        <div class="scroll-buttons label-list-scroller" data-for="favDevices">
-            <button class="scroll-btn prev-btn"></button>
-            <button class="scroll-btn next-btn"></button>
+        <div class="scroll-buttons label-list-scroller">
+            <button class="scroll-btn prev-btn" data-for="favDevices" data-method="horizontal" data-direct="prev"></button>
+            <button class="scroll-btn next-btn" data-for="favDevices" data-method="horizontal" data-direct="next"></button>
         </div>
     </div>
     <div id="favDevices" class="label-list one-row">

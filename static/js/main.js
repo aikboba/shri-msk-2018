@@ -1,35 +1,67 @@
 (function() {
 
-    //Show scroll items controls
-    var labelsList = document.getElementsByClassName('label-list');
-    for (var i = 0; i < labelsList.length; i++)
+    //Items List Objects
+    function itemsList(listId)
     {
-        var elId = labelsList[i].getAttribute("id");
-        var height = document.getElementById(elId).clientHeight;
-        var width = document.getElementById(elId).clientWidth;
-        var contentHeight = document.getElementById(elId).scrollHeight;
-        var contentWidth = document.getElementById(elId).scrollWidth;
-        if ( (contentHeight > height || contentWidth > width) && labelsList[i].childElementCount > 1 )
-        {
-            document.querySelector('[data-for = "' + elId + '"]').classList.add("active");
+        var id = listId;
+        var list = document.getElementById(id);
+        var scrollControl = document.querySelector('[data-for = "' + id + '"]');
+        var controlMethod = scrollControl.getAttribute("data-method");
+        var controlDirect = scrollControl.getAttribute("data-direct");
+        var controlType = scrollControl.getAttribute("data-type");
+        var itemsCount = list.childElementCount;
+        var items = list.getElementsByClassName('label-item');
+        var offsetMargin = items[1].offsetTop - items[0].offsetTop;
+        var itemMargin = items[0].style.marginTop;
+        var currentItem = 0;
+
+        return {
+            init: function() {
+                //Show scroll items controls
+                if ( (list.scrollHeight > list.clientHeight || list.scrollWidth > list.clientWidth) && list.childElementCount > 1 )
+                {
+                    scrollControl.classList.add("active");
+                }
+
+                //Scroll actions
+                scrollControl.addEventListener('click', function () {
+                    switch(controlDirect) {
+                        case 'next':
+                            if (currentItem < (itemsCount - 1)) {
+                                itemMargin -= offsetMargin;
+                                items[0].style.marginTop = itemMargin + 'px';
+                                currentItem++;
+                            }
+                            if (currentItem >= (itemsCount - 1) && controlType !== null && controlType == 'dual') {
+                                scrollControl.classList.add("vice-versa");
+                                controlDirect = "prev";
+                            }
+                        break;
+
+                        case 'prev':
+                            if (currentItem > 0) {
+                                itemMargin += offsetMargin;
+                                items[0].style.marginTop = itemMargin + 'px';
+                                currentItem--;
+                            }
+                            if (currentItem <= 0 && controlType !== null && controlType == 'dual') {
+                                scrollControl.classList.remove("vice-versa");
+                                controlDirect = "next";
+                            }
+                            break;
+                    }
+                });
+            }
         }
     }
-    //Items scrolling
-    /*var labelsScrollers = document.getElementsByClassName('label-list-scroller');
-    for (var i = 0; i < labelsScrollers.length; i++)
-    {
-        labelsScrollers[i].addEventListener('click', function() {
-            var target = this.getAttribute("data-for");
-            var method = this.getAttribute("data-method");
-            var direct = this.getAttribute("data-direct");
-            var itemsList = document.getElementById(target);
-            var itemsCount = itemsList.childElementCount;
-            var items = itemsList.getElementsByClassName('label-item');
-            var currentItem = items[1];
 
-            scrollToElm( items, currentItem , 600 );
-        });
-    }*/
+    //Items List Objects Init
+    var itemsListArr = [];
+    var labelsList = document.getElementsByClassName('label-list');
+    for (var i = 0; i < labelsList.length; i++) {
+        itemsListArr[i] = itemsList(labelsList[i].getAttribute("id"));
+        itemsListArr[i].init();
+    }
 
     //Popups
     var popupsList = document.getElementsByClassName('label-item');
@@ -189,7 +221,7 @@
         el.style.opacity = 1;
 
         var last = +new Date();
-        var tick = function() {
+        var tick = function () {
             el.style.opacity = -el.style.opacity + (new Date() - last) / time;
             last = +new Date();
 
@@ -201,44 +233,5 @@
         tick();
         el.style.display = 'none';
     }
-    //Scroll
-    function scrollToElm(container, elm, duration){
-        var pos = getRelativePos(elm);
-        scrollTo( container, pos.top , 2);  // duration in seconds
-    }
-    function getRelativePos(elm){
-        var pPos = elm.parentNode.getBoundingClientRect(), // parent pos
-            cPos = elm.getBoundingClientRect(), // target pos
-            pos = {};
-
-        pos.top    = cPos.top    - pPos.top + elm.parentNode.scrollTop,
-            pos.right  = cPos.right  - pPos.right,
-            pos.bottom = cPos.bottom - pPos.bottom,
-            pos.left   = cPos.left   - pPos.left;
-
-        return pos;
-    }
-    function scrollTo(element, to, duration, onDone) {
-        var start = element.scrollTop,
-            change = to - start,
-            startTime = performance.now(),
-            val, now, elapsed, t;
-
-        function animateScroll(){
-            now = performance.now();
-            elapsed = (now - startTime)/1000;
-            t = (elapsed/duration);
-
-            element.scrollTop = start + change * easeInOutQuad(t);
-
-            if( t < 1 )
-                window.requestAnimationFrame(animateScroll);
-            else
-                onDone && onDone();
-        };
-
-        animateScroll();
-    }
-    function easeInOutQuad(t){ return t<.5 ? 2*t*t : -1+(4-2*t)*t }
 
 })();

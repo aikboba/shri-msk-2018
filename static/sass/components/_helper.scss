@@ -4,6 +4,7 @@
     visibility: hidden;
 
     &.active { visibility: visible; }
+    &.vice-versa:after { @include transform(rotate(180deg)); }
 }
 .label-list
 {
