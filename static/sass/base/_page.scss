@@ -118,6 +118,7 @@
 {
     grid-area: devices;
 }
+.lt-title, .rt-title { align-self: start; }
 .lt-title { grid-area: lt_title; }
 .rt-title { grid-area: rt_title; }
 .lb-title { grid-area: lb_title; }

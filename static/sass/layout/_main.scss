@@ -28,7 +28,6 @@ body
     @include transition(all 0.3s);
     display: grid;
     justify-content: center;
-    align-content: start;
     grid-gap: 0 26px;
     grid:
             "header header" 92px

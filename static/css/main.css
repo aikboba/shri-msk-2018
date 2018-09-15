@@ -188,16 +188,21 @@
 }
 
 /* line 121, ../sass/base/_page.scss */
+.lt-title, .rt-title {
+  align-self: start;
+}
+
+/* line 122, ../sass/base/_page.scss */
 .lt-title {
   grid-area: lt_title;
 }
 
-/* line 122, ../sass/base/_page.scss */
+/* line 123, ../sass/base/_page.scss */
 .rt-title {
   grid-area: rt_title;
 }
 
-/* line 123, ../sass/base/_page.scss */
+/* line 124, ../sass/base/_page.scss */
 .lb-title {
   grid-area: lb_title;
 }
@@ -210,15 +215,17 @@ figure {
 
 /* line 7, ../sass/base/_typography.scss */
 h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
   font-weight: bold;
 }
 
-/* line 11, ../sass/base/_typography.scss */
+/* line 13, ../sass/base/_typography.scss */
 h2 {
   font-size: 1.125rem;
 }
 
-/* line 13, ../sass/base/_typography.scss */
+/* line 15, ../sass/base/_typography.scss */
 ul.block {
   margin: 0;
   padding: 0;
@@ -1038,7 +1045,6 @@ body {
   transition: all 0.3s;
   display: grid;
   justify-content: center;
-  align-content: start;
   grid-gap: 0 26px;
   grid: "header header" 92px "lt_title rt_title" 40px "left_col right_col" minmax(331px, 40%) "lb_title lb_title" 79px "devices devices" 1fr "footer footer" 64px/50% 50%;
   padding: 0 40px;
@@ -1060,13 +1066,13 @@ body {
           / 100% !important;
   }*/
 }
-/* line 48, ../sass/layout/_main.scss */
+/* line 47, ../sass/layout/_main.scss */
 body.popup-active > *:not(.popup-overlay) {
   -webkit-filter: blur(3px);
   filter: blur(3px);
 }
 
-/* line 65, ../sass/layout/_main.scss */
+/* line 64, ../sass/layout/_main.scss */
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */
