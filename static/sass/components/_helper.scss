@@ -102,6 +102,22 @@
     }
     &.inactive .icon { @include black-white(100%); }
 
+    .ff-fix
+    {
+        @include vendor('display', 'flex');
+        @include vendor('justify-content', 'flex-end');
+        @include vendor('flex-direction', 'column');
+        @include vendor('flex', '1 1 100%');
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .icon
+        {
+            top: 0;
+            left: 0;
+        }
+    }
     .note
     {
         margin-top: 3px;
@@ -120,6 +136,7 @@
         background-repeat: no-repeat;
         background-position: center center;
     }
+
 }
 
 .multi-header-wrap

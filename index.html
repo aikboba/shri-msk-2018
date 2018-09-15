@@ -25,7 +25,7 @@
             <span class="main-text-info">
                 Двери и окна закрыты, сигнализация включена.
             </span>
-            <ul class="main-temperature">
+            <ul class="block main-temperature">
                 <li class="main-temp-item">
                     <span class="temp-name">Дома</span>
                     <span class="temp-value">+23</span>
@@ -44,7 +44,7 @@
                 </li>
             </ul>
             <div id="devicesStates">
-                <ul id="devicesStatesList" class="label-list column-style">
+                <ul id="devicesStatesList" class="block label-list column-style">
                     <li class="label-item temper-group inactive">
                         <i class="icon"></i>
                         <span>Philips Cooler</span>
@@ -82,25 +82,35 @@
     </div>
     <div id="favScripts" class="label-list border-box">
         <button type="button" class="label-item small shadow-hover light-group">
-            <i class="icon"></i>
-            <span>Выключить весь свет в доме и во дворе</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Выключить весь свет в доме и во дворе</span>
+            </div>
         </button>
         <button type="button" class="label-item small shadow-hover timer-group">
-            <i class="icon"></i>
-            <span>Я ухожу</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Я ухожу</span>
+            </div>
         </button>
         <button type="button" class="label-item small shadow-hover light-group">
-            <i class="icon"></i>
-            <span>Включить свет<br/>в коридоре</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Включить свет<br/>в коридоре</span>
+            </div>
         </button>
         <button type="button" class="label-item small shadow-hover temper-group">
-            <i class="icon"></i>
-            <span>Набрать горячую ванну</span>
-            <span class="note">Начнётся в 18:00</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Набрать горячую ванну</span>
+                <span class="note">Начнётся в 18:00</span>
+            </div>
         </button>
         <button type="button" class="label-item small shadow-hover temper-group">
-            <i class="icon"></i>
-            <span>Сделать пол тёплым во всей квартире</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Сделать пол тёплым во всей квартире</span>
+            </div>
         </button>
     </div>
     <div class="multi-header-wrap space-between lb-title">
@@ -124,49 +134,61 @@
             type="button" class="label-item shadow-hover light-group"
             data-for="devicePopup" data-type="lights" data-id="1"
         >
-            <i class="icon"></i>
-            <span>Xiaomi Yeelight LED Smart Bulb</span>
-            <span class="note">Включено</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Xiaomi Yeelight LED Smart Bulb</span>
+                <span class="note">Включено</span>
+            </div>
         </button>
         <button
                 type="button" class="label-item inactive shadow-hover temper-group"
                 data-for="devicePopup" data-type="floor" data-id="1"
         >
-            <i class="icon"></i>
-            <span>D-Link Omna 180 Cam</span>
-            <span class="note">Включится в 17:00</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>D-Link Omna 180 Cam</span>
+                <span class="note">Включится в 17:00</span>
+            </div>
         </button>
         <button
                 type="button" class="label-item inactive shadow-hover temper-group"
                 data-for="devicePopup" data-type="temperature" data-id="1"
         >
-            <i class="icon"></i>
-            <span>Elgato Eve Degree Connected</span>
-            <span class="note">Выключено до 17:00</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Elgato Eve Degree Connected</span>
+                <span class="note">Выключено до 17:00</span>
+            </div>
         </button>
         <button
                 type="button" class="label-item inactive shadow-hover light-group"
                 data-for="devicePopup" data-type="lights" data-id="2"
         >
-            <i class="icon"></i>
-            <span>LIFX Mini Day & Dusk A60 E27</span>
-            <span class="note">Включится в 17:00</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>LIFX Mini Day & Dusk A60 E27</span>
+                <span class="note">Включится в 17:00</span>
+            </div>
         </button>
         <button
                 type="button" class="label-item shadow-hover light-group"
                 data-for="devicePopup" data-type="lights" data-id="4"
         >
-            <i class="icon"></i>
-            <span>Xiaomi Mi Air Purifier 2S</span>
-            <span class="note">Включено</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Xiaomi Mi Air Purifier 2S</span>
+                <span class="note">Включено</span>
+            </div>
         </button>
         <button
                 type="button" class="label-item inactives hadow-hover light-group"
                 data-for="devicePopup" data-type="lights" data-id="3"
         >
-            <i class="icon"></i>
-            <span>Philips Zhirui</span>
-            <span class="note">Выключено</span>
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Philips Zhirui</span>
+                <span class="note">Выключено</span>
+            </div>
         </button>
     </div>
     <footer>
