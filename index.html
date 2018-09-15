@@ -66,18 +66,17 @@
                         <span class="note">Включится в 17:00</span>
                     </li>
                 </ul>
-                <button
-                    id="scrollDevicesStates" class="label-list-scroller"
-                    data-for="devicesStatesList" data-method="vertical" data-direct="next" data-type="dual"
-                ></button>
+                <button id="scrollDevicesStates" class="label-list-scroller" data-for="devicesStatesList" data-method="vertical">
+                    <span class="scroll-btn" data-direct="next" data-type="dual"></span>
+                </button>
             </div>
         </div>
     </div>
     <div class="multi-header-wrap space-between rt-title">
         <h2>Избранные сценарии</h2>
-        <div class="scroll-buttons label-list-scroller">
-            <button class="scroll-btn prev-btn" data-for="favScripts" data-method="page" data-direct="prev"></button>
-            <button class="scroll-btn next-btn" data-for="favScripts" data-method="page" data-direct="next"></button>
+        <div class="scroll-buttons label-list-scroller" data-for="favScripts" data-method="page">
+            <button class="scroll-btn prev-btn" data-direct="prev"></button>
+            <button class="scroll-btn next-btn" data-direct="next"></button>
         </div>
     </div>
     <div id="favScripts" class="label-list border-box">
@@ -124,9 +123,9 @@
                 <button type="button" class="tab-item">Камеры</button>
             </div>
         </div>
-        <div class="scroll-buttons label-list-scroller">
-            <button class="scroll-btn prev-btn" data-for="favDevices" data-method="horizontal" data-direct="prev"></button>
-            <button class="scroll-btn next-btn" data-for="favDevices" data-method="horizontal" data-direct="next"></button>
+        <div class="scroll-buttons label-list-scroller" data-for="favDevices" data-method="horizontal">
+            <button class="scroll-btn prev-btn" data-direct="prev"></button>
+            <button class="scroll-btn next-btn" data-direct="next"></button>
         </div>
     </div>
     <div id="favDevices" class="label-list one-row">
@@ -178,6 +177,26 @@
                 <i class="icon"></i>
                 <span>Xiaomi Mi Air Purifier 2S</span>
                 <span class="note">Включено</span>
+            </div>
+        </button>
+        <button
+                type="button" class="label-item inactives hadow-hover light-group"
+                data-for="devicePopup" data-type="lights" data-id="3"
+        >
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Philips Zhirui</span>
+                <span class="note">Выключено</span>
+            </div>
+        </button>
+        <button
+                type="button" class="label-item inactives hadow-hover light-group"
+                data-for="devicePopup" data-type="lights" data-id="3"
+        >
+            <div class="ff-fix">
+                <i class="icon"></i>
+                <span>Philips Zhirui</span>
+                <span class="note">Выключено</span>
             </div>
         </button>
         <button

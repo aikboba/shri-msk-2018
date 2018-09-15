@@ -83,29 +83,36 @@
         #scrollDevicesStates
         {
             @include vendor('flex', '0 0 auto');
-            @include vendor('display', 'flex');
-            @include vendor('align-items', 'center');
-            @include vendor('justify-content', 'center');
             @include border-radius-top-lr(_size(b-radius-big));
             height: 41px;
             background-color: _palette(light);
 
-            &:after
+            .scroll-btn
             {
-                @include opacity(0.3);
-                @include transition(all 0.3s);
-                content: "";
-                width: 16px;
-                height: 16px;
-                background-image: url(../graph/arrows-up@2x.png);
-                background-image: url(../graph/arrows-up.svg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
-            #{$hover}
-            {
-                &:after { @include opacity(1); }
+                @include vendor('display', 'flex');
+                @include vendor('align-items', 'center');
+                @include vendor('justify-content', 'center');
+                @include border-radius-top-lr(_size(b-radius-big));
+                height: 100%;
+
+                &:after
+                {
+                    @include opacity(0.3);
+                    @include transition(all 0.3s);
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../graph/arrows-up@2x.png);
+                    background-image: url(../graph/arrows-up.svg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                #{$hover}
+                {
+                    &:after { @include opacity(1); }
+                }
+                &.vice-versa:after { @include transform(rotate(180deg)); }
             }
         }
     }

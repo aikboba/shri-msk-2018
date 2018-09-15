@@ -126,6 +126,17 @@
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 41px;
+  background-color: #F7F7F7;
+}
+/* line 90, ../sass/base/_page.scss */
+#mainSection .main-info #scrollDevicesStates .scroll-btn {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -144,11 +155,10 @@
   -moz-border-radius-topright: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  height: 41px;
-  background-color: #F7F7F7;
+  height: 100%;
 }
-/* line 93, ../sass/base/_page.scss */
-#mainSection .main-info #scrollDevicesStates:after {
+/* line 98, ../sass/base/_page.scss */
+#mainSection .main-info #scrollDevicesStates .scroll-btn:after {
   /* Netscape */
   -moz-opacity: 0.3;
   /* Safari 1.x */
@@ -167,8 +177,8 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* line 108, ../sass/base/_page.scss */
-#mainSection .main-info #scrollDevicesStates:hover:after, #mainSection .main-info #scrollDevicesStates:active:after, #mainSection .main-info #scrollDevicesStates:focus:after {
+/* line 113, ../sass/base/_page.scss */
+#mainSection .main-info #scrollDevicesStates .scroll-btn:hover:after, #mainSection .main-info #scrollDevicesStates .scroll-btn:active:after, #mainSection .main-info #scrollDevicesStates .scroll-btn:focus:after {
   /* Netscape */
   -moz-opacity: 1;
   /* Safari 1.x */
@@ -176,33 +186,41 @@
   /* Good browsers */
   opacity: 1;
 }
+/* line 115, ../sass/base/_page.scss */
+#mainSection .main-info #scrollDevicesStates .scroll-btn.vice-versa:after {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
-/* line 113, ../sass/base/_page.scss */
+/* line 120, ../sass/base/_page.scss */
 #favScripts {
   grid-area: right_col;
 }
 
-/* line 117, ../sass/base/_page.scss */
+/* line 124, ../sass/base/_page.scss */
 #favDevices {
   grid-area: devices;
 }
 
-/* line 121, ../sass/base/_page.scss */
+/* line 128, ../sass/base/_page.scss */
 .lt-title, .rt-title {
   align-self: start;
 }
 
-/* line 122, ../sass/base/_page.scss */
+/* line 129, ../sass/base/_page.scss */
 .lt-title {
   grid-area: lt_title;
 }
 
-/* line 123, ../sass/base/_page.scss */
+/* line 130, ../sass/base/_page.scss */
 .rt-title {
   grid-area: rt_title;
 }
 
-/* line 124, ../sass/base/_page.scss */
+/* line 131, ../sass/base/_page.scss */
 .lb-title {
   grid-area: lb_title;
 }
@@ -242,16 +260,8 @@ ul.block {
 .label-list-scroller.active {
   visibility: visible;
 }
-/* line 7, ../sass/components/_helper.scss */
-.label-list-scroller.vice-versa:after {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
 
-/* line 9, ../sass/components/_helper.scss */
+/* line 8, ../sass/components/_helper.scss */
 .label-list {
   display: -moz-flex;
   display: -webkit-flex;
@@ -269,22 +279,22 @@ ul.block {
   max-width: 100%;
   max-height: 100%;
 }
-/* line 18, ../sass/components/_helper.scss */
+/* line 17, ../sass/components/_helper.scss */
 .label-list.one-row {
   -moz-flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-/* line 22, ../sass/components/_helper.scss */
+/* line 21, ../sass/components/_helper.scss */
 .label-list.one-row .label-item {
   margin-left: 15px;
 }
-/* line 26, ../sass/components/_helper.scss */
+/* line 25, ../sass/components/_helper.scss */
 .label-list.one-row .label-item:first-child {
   margin-left: 0;
 }
-/* line 29, ../sass/components/_helper.scss */
+/* line 28, ../sass/components/_helper.scss */
 .label-list.column-style {
   -moz-flex-direction: column;
   -webkit-flex-direction: column;
@@ -295,26 +305,26 @@ ul.block {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-/* line 34, ../sass/components/_helper.scss */
+/* line 33, ../sass/components/_helper.scss */
 .label-list.column-style .label-item {
   margin-top: 15px;
 }
-/* line 38, ../sass/components/_helper.scss */
+/* line 37, ../sass/components/_helper.scss */
 .label-list.column-style .label-item:first-child {
   margin-top: 0;
 }
-/* line 41, ../sass/components/_helper.scss */
+/* line 40, ../sass/components/_helper.scss */
 .label-list.border-box {
   display: grid;
   grid-gap: 15px 15px;
   grid-template-columns: repeat(auto-fill, 200px);
 }
-/* line 47, ../sass/components/_helper.scss */
+/* line 46, ../sass/components/_helper.scss */
 .label-list .label-item {
   flex: 0 0 auto;
 }
 
-/* line 52, ../sass/components/_helper.scss */
+/* line 51, ../sass/components/_helper.scss */
 .label-item {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -343,38 +353,38 @@ ul.block {
   font-size: 0.875rem;
   text-align: left;
 }
-/* line 68, ../sass/components/_helper.scss */
+/* line 67, ../sass/components/_helper.scss */
 .label-item.small {
   height: 100px;
 }
-/* line 74, ../sass/components/_helper.scss */
+/* line 73, ../sass/components/_helper.scss */
 .label-item.shadow-hover:hover, .label-item.shadow-hover:active, .label-item.shadow-hover:focus {
   background: #ffffff;
   -webkit-box-shadow: 0px 2px 6px 0px rgba(197, 186, 186, 0.5);
   -moz-box-shadow: 0px 2px 6px 0px rgba(197, 186, 186, 0.5);
   box-shadow: 0px 2px 6px 0px rgba(197, 186, 186, 0.5);
 }
-/* line 82, ../sass/components/_helper.scss */
+/* line 81, ../sass/components/_helper.scss */
 .label-item.light-group .icon {
   background-image: url(../graph/light@2x.png);
   background-image: url(../graph/light.svg);
 }
-/* line 90, ../sass/components/_helper.scss */
+/* line 89, ../sass/components/_helper.scss */
 .label-item.temper-group .icon {
   background-image: url(../graph/temper@2x.png);
   background-image: url(../graph/temper.svg);
 }
-/* line 98, ../sass/components/_helper.scss */
+/* line 97, ../sass/components/_helper.scss */
 .label-item.timer-group .icon {
   background-image: url(../graph/timer@2x.png);
   background-image: url(../graph/timer.svg);
 }
-/* line 104, ../sass/components/_helper.scss */
+/* line 103, ../sass/components/_helper.scss */
 .label-item.inactive .icon {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-/* line 106, ../sass/components/_helper.scss */
+/* line 105, ../sass/components/_helper.scss */
 .label-item .ff-fix {
   display: -moz-flex;
   display: -webkit-flex;
@@ -396,19 +406,19 @@ ul.block {
   width: 100%;
   height: 100%;
 }
-/* line 116, ../sass/components/_helper.scss */
+/* line 115, ../sass/components/_helper.scss */
 .label-item .ff-fix .icon {
   top: 0;
   left: 0;
 }
-/* line 122, ../sass/components/_helper.scss */
+/* line 121, ../sass/components/_helper.scss */
 .label-item .note {
   margin-top: 3px;
   font-size: 0.75rem;
   font-weight: normal;
   color: #858585;
 }
-/* line 129, ../sass/components/_helper.scss */
+/* line 128, ../sass/components/_helper.scss */
 .label-item .icon {
   position: absolute;
   top: 14px;
@@ -420,7 +430,7 @@ ul.block {
   background-position: center center;
 }
 
-/* line 143, ../sass/components/_helper.scss */
+/* line 142, ../sass/components/_helper.scss */
 .multi-header-wrap {
   display: -moz-flex;
   display: -webkit-flex;
@@ -435,14 +445,14 @@ ul.block {
   -ms-justify-content: -ms-flex-start;
   justify-content: flex-start;
 }
-/* line 149, ../sass/components/_helper.scss */
+/* line 148, ../sass/components/_helper.scss */
 .multi-header-wrap.space-between {
   -moz-justify-content: space-between;
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 151, ../sass/components/_helper.scss */
+/* line 150, ../sass/components/_helper.scss */
 .multi-header-wrap .multi-header-column {
   display: -moz-flex;
   display: -webkit-flex;
@@ -457,19 +467,19 @@ ul.block {
   -ms-justify-content: -ms-flex-start;
   justify-content: flex-start;
 }
-/* line 157, ../sass/components/_helper.scss */
+/* line 156, ../sass/components/_helper.scss */
 .multi-header-wrap .multi-header-column * + * {
   margin-left: 10px;
 }
 
-/* line 161, ../sass/components/_helper.scss */
+/* line 160, ../sass/components/_helper.scss */
 .tabs {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
 }
-/* line 165, ../sass/components/_helper.scss */
+/* line 164, ../sass/components/_helper.scss */
 .tabs .tab-item {
   -webkit-border-radius: 14px;
   -moz-border-radius: 14px;
@@ -486,16 +496,16 @@ ul.block {
   color: #000;
   font-size: 0.813rem;
 }
-/* line 178, ../sass/components/_helper.scss */
+/* line 177, ../sass/components/_helper.scss */
 .tabs .tab-item:first-child {
   margin-left: 0;
 }
-/* line 179, ../sass/components/_helper.scss */
+/* line 178, ../sass/components/_helper.scss */
 .tabs .tab-item.current-item, .tabs .tab-item:hover, .tabs .tab-item:active, .tabs .tab-item:focus {
   background: #FFD93E;
 }
 
-/* line 183, ../sass/components/_helper.scss */
+/* line 182, ../sass/components/_helper.scss */
 .scroll-buttons {
   display: -moz-flex;
   display: -webkit-flex;
@@ -511,7 +521,7 @@ ul.block {
   justify-content: space-between;
   width: 40px;
 }
-/* line 190, ../sass/components/_helper.scss */
+/* line 189, ../sass/components/_helper.scss */
 .scroll-buttons .scroll-btn {
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -527,7 +537,7 @@ ul.block {
   background-image: url(../graph/arrow-left@2x.png);
   background-image: url(../graph/arrow-left.svg);
 }
-/* line 199, ../sass/components/_helper.scss */
+/* line 198, ../sass/components/_helper.scss */
 .scroll-buttons .scroll-btn:hover, .scroll-buttons .scroll-btn:active, .scroll-buttons .scroll-btn:focus {
   /* Netscape */
   -moz-opacity: 1;
@@ -536,7 +546,7 @@ ul.block {
   /* Good browsers */
   opacity: 1;
 }
-/* line 200, ../sass/components/_helper.scss */
+/* line 199, ../sass/components/_helper.scss */
 .scroll-buttons .scroll-btn.next-btn {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -545,7 +555,7 @@ ul.block {
   transform: rotate(180deg);
 }
 
-/* line 204, ../sass/components/_helper.scss */
+/* line 203, ../sass/components/_helper.scss */
 .popup-overlay {
   display: -moz-flex;
   display: -webkit-flex;
@@ -568,11 +578,11 @@ ul.block {
   background: rgba(51, 51, 51, 0.5);
 }
 
-/* line 217, ../sass/components/_helper.scss */
+/* line 216, ../sass/components/_helper.scss */
 .popup-wrapper {
   width: 630px;
 }
-/* line 221, ../sass/components/_helper.scss */
+/* line 220, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -593,26 +603,26 @@ ul.block {
   padding: 26px 25px;
   background: #ffffff;
 }
-/* line 231, ../sass/components/_helper.scss */
+/* line 230, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .popup-title {
   font-size: 1.688rem;
 }
-/* line 232, ../sass/components/_helper.scss */
+/* line 231, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .popup-remark {
   margin-top: 6px;
   font-size: 0.875rem;
 }
-/* line 237, ../sass/components/_helper.scss */
+/* line 236, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .tabs {
   margin-top: 20px;
 }
-/* line 238, ../sass/components/_helper.scss */
+/* line 237, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap {
   position: relative;
   margin-top: 25px;
   width: 100%;
 }
-/* line 244, ../sass/components/_helper.scss */
+/* line 243, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap .vals {
   display: -moz-flex;
   display: -webkit-flex;
@@ -630,15 +640,15 @@ ul.block {
   color: #ffffff;
   font-weight: bold;
 }
-/* line 256, ../sass/components/_helper.scss */
+/* line 255, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap .vals.min-val {
   left: 0;
 }
-/* line 257, ../sass/components/_helper.scss */
+/* line 256, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap .vals.max-val {
   right: 0;
 }
-/* line 260, ../sass/components/_helper.scss */
+/* line 259, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .reostat-wrap {
   display: -moz-flex;
   display: -webkit-flex;
@@ -651,7 +661,7 @@ ul.block {
   width: 100%;
   margin-top: 20px;
 }
-/* line 267, ../sass/components/_helper.scss */
+/* line 266, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .current-value {
   display: -moz-flex;
   display: -webkit-flex;
@@ -667,11 +677,11 @@ ul.block {
   font-weight: bold;
   font-size: 2.25rem;
 }
-/* line 277, ../sass/components/_helper.scss */
+/* line 276, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .current-value > img {
   margin-left: 14px;
 }
-/* line 280, ../sass/components/_helper.scss */
+/* line 279, ../sass/components/_helper.scss */
 .popup-wrapper .popup-buttons {
   display: -moz-flex;
   display: -webkit-flex;
@@ -689,7 +699,7 @@ ul.block {
   margin-left: -8px;
   margin-right: -8px;
 }
-/* line 289, ../sass/components/_helper.scss */
+/* line 288, ../sass/components/_helper.scss */
 .popup-wrapper .popup-buttons .popup-btn {
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -709,7 +719,7 @@ ul.block {
   font-size: 1.125rem;
   line-height: 60px;
 }
-/* line 302, ../sass/components/_helper.scss */
+/* line 301, ../sass/components/_helper.scss */
 .popup-wrapper .popup-buttons .popup-btn:hover, .popup-wrapper .popup-buttons .popup-btn:active, .popup-wrapper .popup-buttons .popup-btn:focus {
   background: #FFD93E;
   color: #000;
@@ -722,11 +732,12 @@ textarea {
 
 /* line 2, ../sass/components/_form.scss */
 button {
+  padding: 0;
   border: none;
   cursor: pointer;
 }
 
-/* line 7, ../sass/components/_form.scss */
+/* line 8, ../sass/components/_form.scss */
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -735,16 +746,16 @@ button {
   color: #333333;
 }
 
-/* line 64, ../sass/components/_form.scss */
+/* line 65, ../sass/components/_form.scss */
 input[type=range].popup-range {
   -webkit-appearance: none;
   width: 100%;
 }
-/* line 68, ../sass/components/_form.scss */
+/* line 69, ../sass/components/_form.scss */
 input[type=range].popup-range:focus {
   outline: none;
 }
-/* line 72, ../sass/components/_form.scss */
+/* line 73, ../sass/components/_form.scss */
 input[type=range].popup-range::-webkit-slider-runnable-track {
   width: 100%;
   height: 60px;
@@ -754,7 +765,7 @@ input[type=range].popup-range::-webkit-slider-runnable-track {
   -moz-border-radius: 60px;
   border-radius: 60px;
 }
-/* line 76, ../sass/components/_form.scss */
+/* line 77, ../sass/components/_form.scss */
 input[type=range].popup-range::-webkit-slider-thumb {
   position: relative;
   z-index: 2;
@@ -767,7 +778,7 @@ input[type=range].popup-range::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
 }
-/* line 80, ../sass/components/_form.scss */
+/* line 81, ../sass/components/_form.scss */
 input[type=range].popup-range:focus::-webkit-slider-runnable-track {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -775,7 +786,7 @@ input[type=range].popup-range:focus::-webkit-slider-runnable-track {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 84, ../sass/components/_form.scss */
+/* line 85, ../sass/components/_form.scss */
 input[type=range].popup-range::-moz-range-track {
   width: 100%;
   height: 60px;
@@ -785,7 +796,7 @@ input[type=range].popup-range::-moz-range-track {
   -moz-border-radius: 60px;
   border-radius: 60px;
 }
-/* line 88, ../sass/components/_form.scss */
+/* line 89, ../sass/components/_form.scss */
 input[type=range].popup-range::-moz-range-thumb {
   position: relative;
   z-index: 2;
@@ -797,7 +808,7 @@ input[type=range].popup-range::-moz-range-thumb {
   box-shadow: 0 0 0 4px #ffffff;
   cursor: pointer;
 }
-/* line 90, ../sass/components/_form.scss */
+/* line 91, ../sass/components/_form.scss */
 input[type=range].popup-range::-ms-track {
   width: 100%;
   height: 60px;
@@ -806,19 +817,19 @@ input[type=range].popup-range::-ms-track {
   background: transparent;
   color: transparent;
 }
-/* line 95, ../sass/components/_form.scss */
+/* line 96, ../sass/components/_form.scss */
 input[type=range].popup-range::-ms-fill-lower {
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   border-radius: 60px;
 }
-/* line 96, ../sass/components/_form.scss */
+/* line 97, ../sass/components/_form.scss */
 input[type=range].popup-range::-ms-fill-upper {
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   border-radius: 60px;
 }
-/* line 97, ../sass/components/_form.scss */
+/* line 98, ../sass/components/_form.scss */
 input[type=range].popup-range::-ms-thumb {
   position: relative;
   z-index: 2;
@@ -830,7 +841,7 @@ input[type=range].popup-range::-ms-thumb {
   box-shadow: 0 0 0 4px #ffffff;
   cursor: pointer;
 }
-/* line 101, ../sass/components/_form.scss */
+/* line 102, ../sass/components/_form.scss */
 input[type=range].popup-range.temper-range::-webkit-slider-runnable-track {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -838,7 +849,7 @@ input[type=range].popup-range.temper-range::-webkit-slider-runnable-track {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 102, ../sass/components/_form.scss */
+/* line 103, ../sass/components/_form.scss */
 input[type=range].popup-range.temper-range::-moz-range-track {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -846,7 +857,7 @@ input[type=range].popup-range.temper-range::-moz-range-track {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 103, ../sass/components/_form.scss */
+/* line 104, ../sass/components/_form.scss */
 input[type=range].popup-range.temper-range::-ms-fill-lower {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -854,7 +865,7 @@ input[type=range].popup-range.temper-range::-ms-fill-lower {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 104, ../sass/components/_form.scss */
+/* line 105, ../sass/components/_form.scss */
 input[type=range].popup-range.temper-range::-ms-fill-upper {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -862,7 +873,7 @@ input[type=range].popup-range.temper-range::-ms-fill-upper {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 105, ../sass/components/_form.scss */
+/* line 106, ../sass/components/_form.scss */
 input[type=range].popup-range.temper-range:focus::-ms-fill-lower {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -870,7 +881,7 @@ input[type=range].popup-range.temper-range:focus::-ms-fill-lower {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 106, ../sass/components/_form.scss */
+/* line 107, ../sass/components/_form.scss */
 input[type=range].popup-range.temper-range:focus::-ms-fill-upper {
   background: #068fff;
   background: -moz-linear-gradient(left, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -878,7 +889,7 @@ input[type=range].popup-range.temper-range:focus::-ms-fill-upper {
   background: linear-gradient(to right, #068fff 0%, #ffd800 50%, #f76b1c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#068fff', endColorstr='#f76b1c',GradientType=1 );
 }
-/* line 110, ../sass/components/_form.scss */
+/* line 111, ../sass/components/_form.scss */
 input[type=range].popup-range.light-range::-webkit-slider-runnable-track {
   background: #ffe682;
   background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
@@ -886,7 +897,7 @@ input[type=range].popup-range.light-range::-webkit-slider-runnable-track {
   background: linear-gradient(to right, #ffe682 0%, #ff9e00 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
 }
-/* line 111, ../sass/components/_form.scss */
+/* line 112, ../sass/components/_form.scss */
 input[type=range].popup-range.light-range::-moz-range-track {
   background: #ffe682;
   background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
@@ -894,7 +905,7 @@ input[type=range].popup-range.light-range::-moz-range-track {
   background: linear-gradient(to right, #ffe682 0%, #ff9e00 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
 }
-/* line 112, ../sass/components/_form.scss */
+/* line 113, ../sass/components/_form.scss */
 input[type=range].popup-range.light-range::-ms-fill-lower {
   background: #ffe682;
   background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
@@ -902,7 +913,7 @@ input[type=range].popup-range.light-range::-ms-fill-lower {
   background: linear-gradient(to right, #ffe682 0%, #ff9e00 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
 }
-/* line 113, ../sass/components/_form.scss */
+/* line 114, ../sass/components/_form.scss */
 input[type=range].popup-range.light-range::-ms-fill-upper {
   background: #ffe682;
   background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
@@ -910,7 +921,7 @@ input[type=range].popup-range.light-range::-ms-fill-upper {
   background: linear-gradient(to right, #ffe682 0%, #ff9e00 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
 }
-/* line 114, ../sass/components/_form.scss */
+/* line 115, ../sass/components/_form.scss */
 input[type=range].popup-range.light-range:focus::-ms-fill-lower {
   background: #ffe682;
   background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
@@ -918,7 +929,7 @@ input[type=range].popup-range.light-range:focus::-ms-fill-lower {
   background: linear-gradient(to right, #ffe682 0%, #ff9e00 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
 }
-/* line 115, ../sass/components/_form.scss */
+/* line 116, ../sass/components/_form.scss */
 input[type=range].popup-range.light-range:focus::-ms-fill-upper {
   background: #ffe682;
   background: -moz-linear-gradient(left, #ffe682 0%, #ff9e00 100%);
@@ -927,7 +938,7 @@ input[type=range].popup-range.light-range:focus::-ms-fill-upper {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe682', endColorstr='#ff9e00',GradientType=1 );
 }
 
-/* line 121, ../sass/components/_form.scss */
+/* line 122, ../sass/components/_form.scss */
 .reostat-container {
   position: relative;
   background-image: url(../graph/reostat-circle.png);
@@ -935,7 +946,7 @@ input[type=range].popup-range.light-range:focus::-ms-fill-upper {
   height: 221px;
   padding: 22px;
 }
-/* line 129, ../sass/components/_form.scss */
+/* line 130, ../sass/components/_form.scss */
 .reostat-container .reostat-indicator {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -946,7 +957,7 @@ input[type=range].popup-range.light-range:focus::-ms-fill-upper {
   height: 10px;
   visibility: hidden;
 }
-/* line 138, ../sass/components/_form.scss */
+/* line 139, ../sass/components/_form.scss */
 .reostat-container .reostat-inner {
   display: -moz-flex;
   display: -webkit-flex;
@@ -970,7 +981,7 @@ input[type=range].popup-range.light-range:focus::-ms-fill-upper {
   height: 100%;
   background: #FEFEFE;
 }
-/* line 149, ../sass/components/_form.scss */
+/* line 150, ../sass/components/_form.scss */
 .reostat-container .reostat-inner .current-val {
   font-size: 4.125rem;
   font-weight: bold;

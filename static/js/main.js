@@ -7,12 +7,20 @@
         var list = document.getElementById(id);
         var scrollControl = document.querySelector('[data-for = "' + id + '"]');
         var controlMethod = scrollControl.getAttribute("data-method");
-        var controlDirect = scrollControl.getAttribute("data-direct");
-        var controlType = scrollControl.getAttribute("data-type");
+        var scrollControlItem = scrollControl.getElementsByClassName('scroll-btn');
         var itemsCount = list.childElementCount;
         var items = list.getElementsByClassName('label-item');
-        var offsetMargin = items[1].offsetTop - items[0].offsetTop;
-        var itemMargin = items[0].style.marginTop;
+        if ( controlMethod == 'vertical' )
+        {
+            var offsetMargin = items[1].offsetTop - items[0].offsetTop;
+            var offsetProp = 'marginTop';
+        }
+        else if ( controlMethod == 'horizontal' )
+        {
+            var offsetMargin = items[1].offsetLeft - items[0].offsetLeft;
+            var offsetProp = 'marginLeft';
+        }
+        var itemMargin = items[0].style[offsetProp];
         var currentItem = 0;
 
         return {
@@ -24,33 +32,44 @@
                 }
 
                 //Scroll actions
-                scrollControl.addEventListener('click', function () {
-                    switch(controlDirect) {
-                        case 'next':
-                            if (currentItem < (itemsCount - 1)) {
-                                itemMargin -= offsetMargin;
-                                items[0].style.marginTop = itemMargin + 'px';
-                                currentItem++;
-                            }
-                            if (currentItem >= (itemsCount - 1) && controlType !== null && controlType == 'dual') {
-                                scrollControl.classList.add("vice-versa");
-                                controlDirect = "prev";
-                            }
-                        break;
+                for (var i = 0; i < scrollControlItem.length; i++)
+                {//Loop controls (prev, next)
+                    scrollControlItem[i].addEventListener('click', function () {
 
-                        case 'prev':
-                            if (currentItem > 0) {
-                                itemMargin += offsetMargin;
-                                items[0].style.marginTop = itemMargin + 'px';
-                                currentItem--;
-                            }
-                            if (currentItem <= 0 && controlType !== null && controlType == 'dual') {
-                                scrollControl.classList.remove("vice-versa");
-                                controlDirect = "next";
-                            }
-                            break;
-                    }
-                });
+                        var controlDirect = this.getAttribute("data-direct");
+                        var controlType = this.getAttribute("data-type");
+
+                        switch(controlDirect) {
+                            case 'next':
+                                if ( controlMethod == 'vertical' || controlMethod == 'horizontal' ) {
+                                    if (currentItem < (itemsCount - 1)) {
+                                        itemMargin -= offsetMargin;
+                                        items[0].style[offsetProp] = itemMargin + 'px';
+                                        currentItem++;
+                                    }
+                                    if (currentItem >= (itemsCount - 1) && controlType !== null && controlType == 'dual') {
+                                        this.classList.add("vice-versa");
+                                        this.dataset.direct = "prev";
+                                    }
+                                }
+                                break;
+
+                            case 'prev':
+                                if ( controlMethod == 'vertical' || controlMethod == 'horizontal' ) {
+                                    if (currentItem > 0) {
+                                        itemMargin += offsetMargin;
+                                        items[0].style[offsetProp] = itemMargin + 'px';
+                                        currentItem--;
+                                    }
+                                    if (currentItem <= 0 && controlType !== null && controlType == 'dual') {
+                                        this.classList.remove("vice-versa");
+                                        this.dataset.direct = "next";
+                                    }
+                                }
+                                break;
+                        }
+                    });
+                }
             }
         }
     }
