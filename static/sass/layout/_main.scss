@@ -47,18 +47,34 @@ body
     &.popup-active > *:not(.popup-overlay) { @include blur(3px); }
 
 
-    /*@media screen and ( max-width: (_sres(desktop-min) - 1) )
+    @media screen and ( max-width: (_sres(desktop-min) - 1) )
     {
         grid:
-                "abar" auto
-                "header" 52px
-                "hmargin" 15px
-                "main" auto
-                "sidebar" auto
-                "fmargin" 20px
-                "footer" 40px
-            / 100% !important;
-    }*/
+            "header" 92px
+            "lt_title" 40px
+            "left_col" 40%
+            "." 20px
+            "rt_title" 40px
+            "right_col" _size(sticker-sm-h)
+            "lb_title" auto
+            "devices" 1fr
+            "footer" 64px
+        / 1fr;
+    }
+    @media screen and ( max-width: (_sres(middle-device) - 1) )
+    {
+        grid:
+            "header" auto
+            "lt_title" 40px
+            "left_col" 40%
+            "." 20px
+            "rt_title" 40px
+            "right_col" _size(sticker-sm-h)
+            "lb_title" auto
+            "devices" 1fr
+            "footer" 64px
+        / 1fr;
+    }
 }
 
 .noselect {

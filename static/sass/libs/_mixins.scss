@@ -36,6 +36,15 @@
     border-top-left-radius: $size;
     border-top-right-radius: $size;
 }
+@mixin border-radius-left-tb($size)
+{
+    -webkit-border-top-left-radius: $size;
+    -webkit-border-bottom-left-radius: $size;
+    -moz-border-radius-topleft: $size;
+    -moz-border-radius-bottomleft: $size;
+    border-top-left-radius: $size;
+    border-bottom-left-radius: $size;
+}
 @mixin border-radius($size)
 {
     -webkit-border-radius: $size;

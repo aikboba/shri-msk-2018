@@ -16,6 +16,11 @@
         background-size: cover;
         overflow: hidden;
 
+        @media screen and ( max-width: (_sres(phone-horizont) - 1) )
+        {
+            padding-right: _size(figure-padding);
+        }
+
         @media #{$r2x}
         {
             background: url(../graph/bg@2x.png) no-repeat center center;
@@ -71,6 +76,15 @@
             height: 100%;
             padding-top: _size(figure-padding);
 
+            @media screen and ( max-width: (_sres(phone-horizont) - 1) )
+            {
+                @include vendor('flex-direction', 'row');
+                right: 0;
+                bottom: _size(figure-padding);
+                height: auto;
+                width: 100%;
+            }
+
             ul
             {
                 @include vendor('flex', '1');
@@ -78,6 +92,22 @@
                 @include vendor('flex-direction', 'column');
                 overflow: hidden;
                 margin-bottom: 15px;
+
+                @media screen and ( max-width: (_sres(phone-horizont) - 1) )
+                {
+                    @include vendor('flex-direction', 'row');
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    margin-bottom: 0;
+
+                    .label-item
+                    {
+                        margin-top: 0;
+                        margin-left: 15px;
+
+                        &:first-child { margin-left: 0; }
+                    }
+                }
             }
         }
         #scrollDevicesStates
@@ -86,6 +116,14 @@
             @include border-radius-top-lr(_size(b-radius-big));
             height: 41px;
             background-color: _palette(light);
+
+            @media screen and ( max-width: (_sres(phone-horizont) - 1) )
+            {
+                @include border-radius-top-lr(0);
+                @include border-radius-left-tb(_size(b-radius-big));
+                height: _size(sticker-h);
+                width: 41px;
+            }
 
             .scroll-btn
             {
@@ -113,6 +151,12 @@
                     &:after { @include opacity(1); }
                 }
                 &.vice-versa:after { @include transform(rotate(180deg)); }
+
+                @media screen and ( max-width: (_sres(phone-horizont) - 1) )
+                {
+                    &:after { @include transform(rotate(270deg)); }
+                    &.vice-versa:after { @include transform(rotate(90deg)); }
+                }
             }
         }
     }
@@ -128,4 +172,12 @@
 .lt-title, .rt-title { align-self: start; }
 .lt-title { grid-area: lt_title; }
 .rt-title { grid-area: rt_title; }
-.lb-title { grid-area: lb_title; }
+.lb-title
+{
+    grid-area: lb_title;
+
+    @media screen and ( max-width: (_sres(desktop-min) - 1) )
+    {
+        padding: 15px 0;
+    }
+}

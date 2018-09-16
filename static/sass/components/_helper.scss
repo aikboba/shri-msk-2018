@@ -43,6 +43,20 @@
         display: grid;
         grid-gap: 15px 15px;
         grid-template-columns: repeat(auto-fill, _size(sticker-w));
+
+        @media screen and ( max-width: (_sres(phone-horizont) - 1) )
+        {
+            @include vendor('display', 'flex');
+            @include vendor('align-content', 'flex-start');
+            @include vendor('flex-wrap', 'nowrap');
+
+            .label-item
+            {
+                margin-left: 15px;
+
+                &:first-child { margin-left: 0; }
+            }
+        }
     }
     .label-item
     {
@@ -155,6 +169,18 @@
         @include vendor('justify-content', 'flex-start');
 
         * + * { margin-left: 10px; }
+
+        @media screen and ( max-width: (_sres(ipad-min) - 1) )
+        {
+            @include vendor('align-items', 'flex-start');
+            @include vendor('flex-direction', 'column');
+
+            * + *
+            {
+                padding-top: 10px;
+                margin-left: 0;
+            }
+        }
     }
 }
 

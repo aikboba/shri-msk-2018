@@ -1,12 +1,30 @@
 (function() {
 
+    var breakpoints = {
+        desktopMin:     '1024',
+        preDesktopMin:	'960',
+        ipadMin:        '768',
+        phoneHorizont:	'640',
+        middleDevice:	'526',
+        iphoneMin:      '320'
+    };
+
+    //Mobile menu
+    if ( window.innerWidth < breakpoints.middleDevice )
+    {
+        var nav = document.getElementById('menu');
+        nav.addEventListener('click', function() {
+            this.classList.toggle("menu-active");
+        });
+    }
+
     //Items List Objects
     function itemsList(listId)
     {
         var id = listId;
         var list = document.getElementById(id);
         var scrollControl = document.querySelector('[data-for = "' + id + '"]');
-        var controlMethod = scrollControl.getAttribute("data-method");
+        var controlMethod = ( window.innerWidth >= breakpoints.phoneHorizont ? scrollControl.getAttribute("data-method") : 'horizontal' );
         var scrollControlItem = scrollControl.getElementsByClassName('scroll-btn');
         var itemsCount = list.childElementCount;
         var items = list.getElementsByClassName('label-item');

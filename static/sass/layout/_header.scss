@@ -1,10 +1,18 @@
 header
 {
+
     grid-area: header;
     @include vendor('display', 'flex');
     @include vendor('align-items', 'center');
 
     #logoLnk { margin-right: 52px; }
+
+    @media screen and ( max-width: (_sres(middle-device) - 1) )
+    {
+        @include vendor('align-items', 'flex-start');
+        @include vendor('justify-content', 'space-between');
+        padding: 20px 0;
+    }
 
     nav
     {
@@ -17,6 +25,43 @@ header
 
             &:first-child { margin-left: 0; }
             &.current-item, #{$hover} { @include opacity(1); }
+
+            @media screen and ( max-width: (_sres(middle-device) - 1) )
+            {
+                @include vendor('justify-content', 'flex-end');
+                display: none;
+                margin-left: 0;
+                padding: 5px 0;
+                text-align: right;
+            }
+        }
+
+        @media screen and ( max-width: (_sres(middle-device) - 1) )
+        {
+            @include vendor('display', 'flex');
+            @include vendor('flex-direction', 'column');
+            position: relative;
+            padding-top: 40px;
+
+            &:before
+            {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 36px;
+                height: 36px;
+                background-image: url(../graph/menu-mobile.png);
+                background-image: url(../graph/menu-mobile.svg);
+                background-size: cover;
+                cursor: pointer;
+            }
+
+            &.menu-active
+            {
+                .menu-item { @include vendor('display', 'flex'); }
+            }
         }
     }
 }
