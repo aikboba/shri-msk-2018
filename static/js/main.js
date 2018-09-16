@@ -10,6 +10,8 @@
         var scrollControlItem = scrollControl.getElementsByClassName('scroll-btn');
         var itemsCount = list.childElementCount;
         var items = list.getElementsByClassName('label-item');
+        var currentItem = 0; //For horizontal and vertical slide methods
+        var currentPage = 0; //For page slide method
         if ( controlMethod == 'vertical' )
         {
             var offsetMargin = items[1].offsetTop - items[0].offsetTop;
@@ -21,7 +23,7 @@
             var offsetProp = 'marginLeft';
         }
         var itemMargin = items[0].style[offsetProp];
-        var currentItem = 0;
+        var currentPage = 0;
 
         return {
             init: function() {
@@ -29,6 +31,32 @@
                 if ( (list.scrollHeight > list.clientHeight || list.scrollWidth > list.clientWidth) && list.childElementCount > 1 )
                 {
                     scrollControl.classList.add("active");
+
+                    if ( controlMethod == 'page' )
+                    {
+                        var pageItemsCount = 0;
+                        var pageIndex = 0;
+                        var pagedItems = [];
+                        pagedItems[pageIndex] = [];
+
+                        for (var i = 0; i < itemsCount; i++)
+                        {
+                            if ( (items[i].offsetTop + items[i].clientHeight) > list.clientHeight )
+                            {
+                                if (  pagedItems[pageIndex].length == pageItemsCount || pageItemsCount == 0 )
+                                {
+                                    pageItemsCount = ( pageItemsCount == 0 ? pagedItems[pageIndex].length : pageItemsCount );
+                                    pageIndex++; pagedItems[pageIndex] = [];
+                                }
+                            }
+                            pagedItems[pageIndex].push(items[i]);
+                        }
+                        list.innerHTML = '';
+                        for (var i = 0; i < pagedItems[currentPage].length; i++)
+                        {
+                            list.appendChild(pagedItems[currentPage][i]);
+                        }
+                    }
                 }
 
                 //Scroll actions
@@ -52,6 +80,16 @@
                                         this.dataset.direct = "prev";
                                     }
                                 }
+                                else
+                                {
+                                    if (currentPage < (pagedItems.length - 1)) {
+                                        list.innerHTML = ''; currentPage++;
+                                        for (var i = 0; i < pagedItems[currentPage].length; i++)
+                                        {
+                                            list.appendChild(pagedItems[currentPage][i]);
+                                        }
+                                    }
+                                }
                                 break;
 
                             case 'prev':
@@ -64,6 +102,16 @@
                                     if (currentItem <= 0 && controlType !== null && controlType == 'dual') {
                                         this.classList.remove("vice-versa");
                                         this.dataset.direct = "next";
+                                    }
+                                }
+                                else
+                                {
+                                    if (currentPage > 0) {
+                                        list.innerHTML = ''; currentPage--;
+                                        for (var i = 0; i < pagedItems[currentPage].length; i++)
+                                        {
+                                            list.appendChild(pagedItems[currentPage][i]);
+                                        }
                                     }
                                 }
                                 break;

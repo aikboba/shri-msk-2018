@@ -275,26 +275,27 @@ ul.block {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  position: relative;
   overflow: hidden;
   max-width: 100%;
   max-height: 100%;
 }
-/* line 17, ../sass/components/_helper.scss */
+/* line 18, ../sass/components/_helper.scss */
 .label-list.one-row {
   -moz-flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-/* line 21, ../sass/components/_helper.scss */
+/* line 22, ../sass/components/_helper.scss */
 .label-list.one-row .label-item {
   margin-left: 15px;
 }
-/* line 25, ../sass/components/_helper.scss */
+/* line 26, ../sass/components/_helper.scss */
 .label-list.one-row .label-item:first-child {
   margin-left: 0;
 }
-/* line 28, ../sass/components/_helper.scss */
+/* line 29, ../sass/components/_helper.scss */
 .label-list.column-style {
   -moz-flex-direction: column;
   -webkit-flex-direction: column;
@@ -305,26 +306,26 @@ ul.block {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-/* line 33, ../sass/components/_helper.scss */
+/* line 34, ../sass/components/_helper.scss */
 .label-list.column-style .label-item {
   margin-top: 15px;
 }
-/* line 37, ../sass/components/_helper.scss */
+/* line 38, ../sass/components/_helper.scss */
 .label-list.column-style .label-item:first-child {
   margin-top: 0;
 }
-/* line 40, ../sass/components/_helper.scss */
+/* line 41, ../sass/components/_helper.scss */
 .label-list.border-box {
   display: grid;
   grid-gap: 15px 15px;
   grid-template-columns: repeat(auto-fill, 200px);
 }
-/* line 46, ../sass/components/_helper.scss */
+/* line 47, ../sass/components/_helper.scss */
 .label-list .label-item {
   flex: 0 0 auto;
 }
 
-/* line 51, ../sass/components/_helper.scss */
+/* line 52, ../sass/components/_helper.scss */
 .label-item {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -353,38 +354,38 @@ ul.block {
   font-size: 0.875rem;
   text-align: left;
 }
-/* line 67, ../sass/components/_helper.scss */
+/* line 68, ../sass/components/_helper.scss */
 .label-item.small {
   height: 100px;
 }
-/* line 73, ../sass/components/_helper.scss */
+/* line 74, ../sass/components/_helper.scss */
 .label-item.shadow-hover:hover, .label-item.shadow-hover:active, .label-item.shadow-hover:focus {
   background: #ffffff;
   -webkit-box-shadow: 0px 2px 6px 0px rgba(197, 186, 186, 0.5);
   -moz-box-shadow: 0px 2px 6px 0px rgba(197, 186, 186, 0.5);
   box-shadow: 0px 2px 6px 0px rgba(197, 186, 186, 0.5);
 }
-/* line 81, ../sass/components/_helper.scss */
+/* line 82, ../sass/components/_helper.scss */
 .label-item.light-group .icon {
   background-image: url(../graph/light@2x.png);
   background-image: url(../graph/light.svg);
 }
-/* line 89, ../sass/components/_helper.scss */
+/* line 90, ../sass/components/_helper.scss */
 .label-item.temper-group .icon {
   background-image: url(../graph/temper@2x.png);
   background-image: url(../graph/temper.svg);
 }
-/* line 97, ../sass/components/_helper.scss */
+/* line 98, ../sass/components/_helper.scss */
 .label-item.timer-group .icon {
   background-image: url(../graph/timer@2x.png);
   background-image: url(../graph/timer.svg);
 }
-/* line 103, ../sass/components/_helper.scss */
+/* line 104, ../sass/components/_helper.scss */
 .label-item.inactive .icon {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-/* line 105, ../sass/components/_helper.scss */
+/* line 106, ../sass/components/_helper.scss */
 .label-item .ff-fix {
   display: -moz-flex;
   display: -webkit-flex;
@@ -406,19 +407,19 @@ ul.block {
   width: 100%;
   height: 100%;
 }
-/* line 115, ../sass/components/_helper.scss */
+/* line 116, ../sass/components/_helper.scss */
 .label-item .ff-fix .icon {
   top: 0;
   left: 0;
 }
-/* line 121, ../sass/components/_helper.scss */
+/* line 122, ../sass/components/_helper.scss */
 .label-item .note {
   margin-top: 3px;
   font-size: 0.75rem;
   font-weight: normal;
   color: #858585;
 }
-/* line 128, ../sass/components/_helper.scss */
+/* line 129, ../sass/components/_helper.scss */
 .label-item .icon {
   position: absolute;
   top: 14px;
@@ -430,7 +431,7 @@ ul.block {
   background-position: center center;
 }
 
-/* line 142, ../sass/components/_helper.scss */
+/* line 143, ../sass/components/_helper.scss */
 .multi-header-wrap {
   display: -moz-flex;
   display: -webkit-flex;
@@ -445,14 +446,14 @@ ul.block {
   -ms-justify-content: -ms-flex-start;
   justify-content: flex-start;
 }
-/* line 148, ../sass/components/_helper.scss */
+/* line 149, ../sass/components/_helper.scss */
 .multi-header-wrap.space-between {
   -moz-justify-content: space-between;
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 150, ../sass/components/_helper.scss */
+/* line 151, ../sass/components/_helper.scss */
 .multi-header-wrap .multi-header-column {
   display: -moz-flex;
   display: -webkit-flex;
@@ -467,19 +468,19 @@ ul.block {
   -ms-justify-content: -ms-flex-start;
   justify-content: flex-start;
 }
-/* line 156, ../sass/components/_helper.scss */
+/* line 157, ../sass/components/_helper.scss */
 .multi-header-wrap .multi-header-column * + * {
   margin-left: 10px;
 }
 
-/* line 160, ../sass/components/_helper.scss */
+/* line 161, ../sass/components/_helper.scss */
 .tabs {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
 }
-/* line 164, ../sass/components/_helper.scss */
+/* line 165, ../sass/components/_helper.scss */
 .tabs .tab-item {
   -webkit-border-radius: 14px;
   -moz-border-radius: 14px;
@@ -496,16 +497,16 @@ ul.block {
   color: #000;
   font-size: 0.813rem;
 }
-/* line 177, ../sass/components/_helper.scss */
+/* line 178, ../sass/components/_helper.scss */
 .tabs .tab-item:first-child {
   margin-left: 0;
 }
-/* line 178, ../sass/components/_helper.scss */
+/* line 179, ../sass/components/_helper.scss */
 .tabs .tab-item.current-item, .tabs .tab-item:hover, .tabs .tab-item:active, .tabs .tab-item:focus {
   background: #FFD93E;
 }
 
-/* line 182, ../sass/components/_helper.scss */
+/* line 183, ../sass/components/_helper.scss */
 .scroll-buttons {
   display: -moz-flex;
   display: -webkit-flex;
@@ -521,7 +522,7 @@ ul.block {
   justify-content: space-between;
   width: 40px;
 }
-/* line 189, ../sass/components/_helper.scss */
+/* line 190, ../sass/components/_helper.scss */
 .scroll-buttons .scroll-btn {
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -537,7 +538,7 @@ ul.block {
   background-image: url(../graph/arrow-left@2x.png);
   background-image: url(../graph/arrow-left.svg);
 }
-/* line 198, ../sass/components/_helper.scss */
+/* line 199, ../sass/components/_helper.scss */
 .scroll-buttons .scroll-btn:hover, .scroll-buttons .scroll-btn:active, .scroll-buttons .scroll-btn:focus {
   /* Netscape */
   -moz-opacity: 1;
@@ -546,7 +547,7 @@ ul.block {
   /* Good browsers */
   opacity: 1;
 }
-/* line 199, ../sass/components/_helper.scss */
+/* line 200, ../sass/components/_helper.scss */
 .scroll-buttons .scroll-btn.next-btn {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -555,7 +556,7 @@ ul.block {
   transform: rotate(180deg);
 }
 
-/* line 203, ../sass/components/_helper.scss */
+/* line 204, ../sass/components/_helper.scss */
 .popup-overlay {
   display: -moz-flex;
   display: -webkit-flex;
@@ -578,11 +579,11 @@ ul.block {
   background: rgba(51, 51, 51, 0.5);
 }
 
-/* line 216, ../sass/components/_helper.scss */
+/* line 217, ../sass/components/_helper.scss */
 .popup-wrapper {
   width: 630px;
 }
-/* line 220, ../sass/components/_helper.scss */
+/* line 221, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -603,26 +604,26 @@ ul.block {
   padding: 26px 25px;
   background: #ffffff;
 }
-/* line 230, ../sass/components/_helper.scss */
+/* line 231, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .popup-title {
   font-size: 1.688rem;
 }
-/* line 231, ../sass/components/_helper.scss */
+/* line 232, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .popup-remark {
   margin-top: 6px;
   font-size: 0.875rem;
 }
-/* line 236, ../sass/components/_helper.scss */
+/* line 237, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .tabs {
   margin-top: 20px;
 }
-/* line 237, ../sass/components/_helper.scss */
+/* line 238, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap {
   position: relative;
   margin-top: 25px;
   width: 100%;
 }
-/* line 243, ../sass/components/_helper.scss */
+/* line 244, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap .vals {
   display: -moz-flex;
   display: -webkit-flex;
@@ -640,15 +641,15 @@ ul.block {
   color: #ffffff;
   font-weight: bold;
 }
-/* line 255, ../sass/components/_helper.scss */
+/* line 256, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap .vals.min-val {
   left: 0;
 }
-/* line 256, ../sass/components/_helper.scss */
+/* line 257, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .temper-range-wrap .vals.max-val {
   right: 0;
 }
-/* line 259, ../sass/components/_helper.scss */
+/* line 260, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .reostat-wrap {
   display: -moz-flex;
   display: -webkit-flex;
@@ -661,7 +662,7 @@ ul.block {
   width: 100%;
   margin-top: 20px;
 }
-/* line 266, ../sass/components/_helper.scss */
+/* line 267, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .current-value {
   display: -moz-flex;
   display: -webkit-flex;
@@ -677,11 +678,11 @@ ul.block {
   font-weight: bold;
   font-size: 2.25rem;
 }
-/* line 276, ../sass/components/_helper.scss */
+/* line 277, ../sass/components/_helper.scss */
 .popup-wrapper .popup-content .current-value > img {
   margin-left: 14px;
 }
-/* line 279, ../sass/components/_helper.scss */
+/* line 280, ../sass/components/_helper.scss */
 .popup-wrapper .popup-buttons {
   display: -moz-flex;
   display: -webkit-flex;
@@ -699,7 +700,7 @@ ul.block {
   margin-left: -8px;
   margin-right: -8px;
 }
-/* line 288, ../sass/components/_helper.scss */
+/* line 289, ../sass/components/_helper.scss */
 .popup-wrapper .popup-buttons .popup-btn {
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -719,7 +720,7 @@ ul.block {
   font-size: 1.125rem;
   line-height: 60px;
 }
-/* line 301, ../sass/components/_helper.scss */
+/* line 302, ../sass/components/_helper.scss */
 .popup-wrapper .popup-buttons .popup-btn:hover, .popup-wrapper .popup-buttons .popup-btn:active, .popup-wrapper .popup-buttons .popup-btn:focus {
   background: #FFD93E;
   color: #000;
